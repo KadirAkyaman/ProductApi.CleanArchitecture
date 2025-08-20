@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 using KayraExport.Infrastructure.Options;
+using KayraExport.Application.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,9 +33,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
-    options.IncludeXmlComments(xmlPath);
+    // 1. Api XML
+    var apiAssembly = Assembly.GetExecutingAssembly();
+    var xmlApiFilename = $"{apiAssembly.GetName().Name}.xml";
+    var xmlApiPath = Path.Combine(AppContext.BaseDirectory, xmlApiFilename);
+    options.IncludeXmlComments(xmlApiPath);
+
+    // 2. Application XML
+    var appAssembly = typeof(ProductDto).Assembly; 
+    var xmlAppFilename = $"{appAssembly.GetName().Name}.xml";
+    var xmlAppPath = Path.Combine(AppContext.BaseDirectory, xmlAppFilename);
+    options.IncludeXmlComments(xmlAppPath);
 });
 
 var app = builder.Build();
