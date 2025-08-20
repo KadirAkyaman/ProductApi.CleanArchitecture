@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
-using KayraExport.Api.DTOs;
+using KayraExport.Application.DTOs;
 
 namespace KayraExport.Api.Validators
 {
