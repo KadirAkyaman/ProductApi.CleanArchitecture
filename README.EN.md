@@ -86,4 +86,14 @@ Follow these steps to get the project up and running on your local machine.
     -   The application will start running on the URLs specified in the terminal. You can check the `applicationUrl` property in the `src/KayraExport.Api/Properties/launchSettings.json` file to see which ports are being used (e.g., `https://localhost:5020`).
     -   To test the API and view the documentation, navigate to the HTTPS address in your browser and append `/swagger` to it (e.g., `https://localhost:7001/swagger`).
 
+### CI/CD and PaaS Deployment
+
+This project has a simple Continuous Integration (CI) pipeline set up using GitHub Actions. It can also be deployed to a PaaS service (e.g., Azure App Service, Render, Railway) to enable Continuous Deployment (CD).
+
+If the **DB_CONNECTION** environment variable is provided in the PaaS environment, the application will use this value.
+
+If the environment variable is not provided, the application will fall back to the Options Pattern configuration defined in the local `appsettings.json` file and continue to run normally.
+
+This setup ensures that after every push, the CI pipeline checks the build, and the CD pipeline can automatically deploy the project to the PaaS environment.
+
 ---

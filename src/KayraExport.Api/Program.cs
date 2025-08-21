@@ -18,7 +18,11 @@ builder.Services.Configure<DatabaseSettings>(
 builder.Services.AddDbContext<AppDbContext>((serviceProvider, options) =>
 {
     var dbSettings = serviceProvider.GetRequiredService<IOptions<DatabaseSettings>>().Value;
-    options.UseNpgsql(dbSettings.DefaultConnection);
+
+    //If there is an environment variable, use it; otherwise, use the value in appsettings.json.
+    var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION") ?? dbSettings.DefaultConnection;
+
+    options.UseNpgsql(connectionString);
 });
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

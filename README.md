@@ -87,4 +87,14 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
     -   Uygulama, terminalde belirtilen adresler üzerinde çalışmaya başlayacaktır. Hangi portları kullanacağını görmek için `src/KayraExport.Api/Properties/launchSettings.json` dosyasındaki `applicationUrl` alanını kontrol edebilirsiniz (Örneğin: `https://localhost:5020`).
     -   API'yi test etmek ve dokümantasyonu görmek için tarayıcınızda HTTPS adresinin sonuna `/swagger` ekleyerek gidin (Örneğin: `https://localhost:7001/swagger`).
 
+### CI/CD ve PaaS Deploy
+
+Bu proje, GitHub Actions ile basit bir Continuous Integration (CI) pipeline’ına sahiptir. Projeyi bir PaaS hizmetine (örn. Azure App Service, Render, Railway) deploy ederek Continuous Deployment (CD) süreci de kullanılabilir.
+
+PaaS ortamında **DB_CONNECTION** isimli environment variable verilirse, uygulama bu değeri kullanacaktır.
+
+Eğer environment variable sağlanmazsa, uygulama localdeki `appsettings.json` dosyasında tanımlı Options Pattern yapılandırmasını kullanır ve uygulama bu şekilde çalışmaya devam eder.
+
+Bu sayede CI sayesinde her push sonrası build kontrolü yapılır, CD ile de PaaS ortamına otomatik deploy sağlanabilir.
+
 ---
