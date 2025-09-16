@@ -1,11 +1,8 @@
-# Kayra Export - Task 1 - ProductApi
+# ProductApi.CleanArchitecture
 
 [Click here for the English version of this document.](./README.EN.md)
 
 ---
-
-Bu proje, Kayra Export Backend Geliştirici pozisyonu için teknik değerlendirme amacıyla geliştirilmiş bir RESTful API'dir. Proje, temel backend geliştirme prensiplerini, .NET ekosistemindeki modern araçları ve temiz mimari yaklaşımlarını sergilemeyi amaçlamaktadır.
-
 
 ### Proje Açıklaması
 
