@@ -4,6 +4,8 @@
 
 ---
 
+Bu proje, bir teknik değerlendirme için geliştirilmiş olup, bağımsız bir örnek çalışma olarak GitHub’da paylaşılmaktadır.
+
 ### Proje Açıklaması
 
 Bu API, ürünler için temel CRUD (Oluşturma, Okuma, Güncelleme, Silme) operasyonlarını yönetir. Clean Architecture prensiplerine uygun olacak şekilde katmanlı yapı kullanılmış, her katmanın sorumlulukları net biçimde ayrılmıştır.
