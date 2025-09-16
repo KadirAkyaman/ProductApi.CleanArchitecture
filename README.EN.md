@@ -4,6 +4,8 @@
 
 ---
 
+This project was developed as part of a technical assessment and is shared on GitHub as an independent sample project.
+
 ### Project Description
 
 This API manages basic CRUD (Create, Read, Update, Delete) operations for products. It is developed with a layered structure following Clean Architecture principles, ensuring a clear separation of concerns.
